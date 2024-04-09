@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>限度要否診断ツール</title>
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/diagnose.css">
+    <link rel="stylesheet" href="css/task.css">
+
+</head>
+
+
+<body>
+    <!--リンク欄-->
+    <ul class="topnav">
+        <li><a class="active" href="select.php">Home</a></li>
+       
+    </ul>
+
+
+    <div class="wrap">
+        <div class="title-wrap">
+            <div class="inner-block">
+                <h1 class="title">限度要否判定ツール</h1>
+                <h1 class="title">
+                    Yes/No診断
+                </h1>
+            </div>
+        </div>
+        <div class="diagnose-wrap">
+            <div class="inner-block">
+                <div class="btn-wrap">
+                    <button type="button" class="tool-btn start-btn" data-box-link="q1">診断スタート</button>
+                </div>
+                <div class="box-wrap">
+                    <!-- Q1 質問内容 -->
+                    <div id="q1" class="box">
+                        <span class="close-btn">
+                            <span class="mark"></span>
+                        </span>
+                        <h2 class="title">
+                            <span class="num">Q1.</span>
+                            納期は<span class="ib">６か月以内ですか？</span><span class="small">（一つだけ選択）</span>
+                        </h2>
+                        <div class="select-wrap">
+                            <button type="button" class="select yes">はい</button>
+                            <button type="button" class="select no">いいえ</button>
+                        </div>
+                        <div class="btn-wrap">
+                            <button type="button" data-box-link="q2" class="tool-btn next is-active">次の質問へ</button>
+                        </div>
+                    </div>
+
+                    <!-- Q2 質問内容 -->
+                    <div id="q2" class="box">
+                        <span class="close-btn">
+                            <span class="mark"></span>
+                        </span>
+                        <h2 class="title">
+                            <span class="num">Q2.</span>
+                            支払い条件は受け渡し後払いを<span class="ib">含みますか？</span><span class="small">（一つだけ選択）</span>
+                        </h2>
+                        <div class="select-wrap">
+                            <button type="button" class="select yes">はい</button>
+                            <button type="button" class="select no">いいえ（頭金）</button>
+                            <button type="button" class="select vague">それ以外（LC）</button>
+                        </div>
+                        <div class="btn-wrap">
+                            <button type="button" class="tool-btn next result is-active">診断結果へ</button>
+                        </div>
+                    </div>
+
+                    <!-- A1 診断結果① -->
+                    <div id="a1" class="box result">
+                        <span class="close-btn">
+                            <span class="mark"></span>
+                        </span>
+                        <h2 class="title">
+                            成約限度：省略可能、信用限度：必要
+                        </h2>
+                        <p class="txt">
+                            あなたは<br class="sp">信用限度のみシステムに登録してください。
+                        </p>
+                        <div class="btn-wrap">
+                            <button type="button" class="tool-btn finish">診断終了</button>
+                        </div>
+                    </div>
+
+                    <!-- A2 診断結果② -->
+                    <div id="a2" class="box result">
+                        <span class="close-btn">
+                            <span class="mark"></span>
+                        </span>
+                        <h2 class="title">
+                            成約限度：省略可能、信用限度：不要
+                        </h2>
+                        <p class="txt">
+                            あなたは<br class="sp">システムへの入力は不要です。
+                        </p>
+                        <div class="btn-wrap">
+                            <button type="button" class="tool-btn finish">診断終了</button>
+                        </div>
+                    </div>
+
+                    <!-- A3 診断結果③ -->
+                    <div id="a3" class="box result">
+                        <span class="close-btn">
+                            <span class="mark"></span>
+                        </span>
+                        <h2 class="title">
+                            成約限度：省略可能、信用限度：条件次第で設定要
+                        </h2>
+                        <p class="txt">
+                            あなたは<br class="sp">成約限度はシステム入力不要です。信用限度は条件次第なので詳細を確認しましょう。
+                        </p>
+                        <div class="btn-wrap">
+                            <button type="button" class="tool-btn finish">診断終了</button>
+                        </div>
+                    </div>
+
+                    <!-- A4 診断結果④ -->
+                    <div id="a4" class="box result">
+                        <span class="close-btn">
+                            <span class="mark"></span>
+                        </span>
+                        <h2 class="title">
+                            成約限度：必要、信用限度：必要
+                        </h2>
+                        <p class="txt">
+                            あなたは<br class="sp">成約限度、信用限度ともにシステムへ登録してください。
+                        </p>
+                        <div class="btn-wrap">
+                            <button type="button" class="tool-btn finish">診断終了</button>
+                        </div>
+                    </div>
+
+                    <!-- A5 診断結果⑤ -->
+                    <div id="a5" class="box result">
+                        <span class="close-btn">
+                            <span class="mark"></span>
+                        </span>
+                        <h2 class="title">
+                            成約限度：必要、信用限度：不要
+                        </h2>
+                        <p class="txt">
+                            あなたは<br class="sp">成約限度のみシステムに登録してください。
+                        </p>
+                        <div class="btn-wrap">
+                            <button type="button" class="tool-btn finish">診断終了</button>
+                        </div>
+                    </div>
+
+                    <!-- A6 診断結果⑥ -->
+                    <div id="a6" class="box result">
+                        <span class="close-btn">
+                            <span class="mark"></span>
+                        </span>
+                        <h2 class="title">
+                            成約限度：必要、信用限度：条件次第で設定要
+                        </h2>
+                        <p class="txt">
+                            あなたは<br class="sp">成約限度はシステムに登録してください。信用限度は条件次第なので詳細を確認しましょう。
+                        </p>
+                        <div class="btn-wrap">
+                            <button type="button" class="tool-btn finish">診断終了</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+
+            //  スタートボタンがクリックされたら
+            $('.tool-btn').on('click', function () {
+                //  クリックした要素のdata属性を取得
+                const target = $(this).data('box-link');
+                //  上記で取得した要素と同じID名を持つ要素を取得
+                const box = $('#' + target);
+                //  その要素にclassを付け替える
+                $(box).parent().addClass('is-inactive');
+                $(box).fadeIn();
+                $(this).parent().addClass('is-inactive');
+            });
+
+            //  「次の質問へ」がクリックされたら
+            $('.box .tool-btn').on('click', function () {
+                $(this).not($(this).parents('.box').fadeOut(1200));
+                $(this).parents('.box').toggleClass('is-inactive');
+            });
+
+            //  選択肢がクリックされたら
+            $('.select').on('click', function () {
+                $(this).toggleClass('is-inactive');
+                $(this).siblings($('.select')).not($(this)).removeClass('is-inactive');
+
+                const select = $(this).parents('.box').find('.select');
+                const toolBtn = $(this).parents('.box').find('.tool-btn.next');
+
+                //  選択されていないとボタンをクリックできないようにする
+                if (select.hasClass('is-inactive')) {
+                    toolBtn.removeClass('is-inactive');
+                } else {
+                    toolBtn.addClass('is-inactive');
+                }
+            });
+
+            // 診断結果の出し分け
+            $('.tool-btn.result').on('click', function () {
+
+                // それぞれの選択肢の数を数える
+                const yesCnt = $('.select.yes.is-inactive').length;
+                const noCnt = $('.select.no.is-inactive').length;
+                const vagueCnt = $('.select.vague.is-inactive').length;
+
+                // Q1がYesかつQ2がYesの場合
+                if ($('#q1 .select.yes').hasClass('is-inactive') && $('#q2 .select.yes').hasClass('is-inactive')) {
+                    $('#a1').fadeIn();
+                }
+                // Q1がYesかつQ2がNoの場合
+                else if ($('#q1 .select.yes').hasClass('is-inactive') && $('#q2 .select.no').hasClass('is-inactive')) {
+                    $('#a2').fadeIn();
+                }
+                // Q1がYesかつQ2が「それ以外」の場合
+                else if ($('#q1 .select.yes').hasClass('is-inactive') && $('#q2 .select.vague').hasClass('is-inactive')) {
+                    $('#a3').fadeIn();
+                }
+                // Q1がNoかつQ2がYesの場合
+                else if ($('#q1 .select.no').hasClass('is-inactive') && $('#q2 .select.yes').hasClass('is-inactive')) {
+                    $('#a4').fadeIn();
+                }
+                // Q1がNoかつQ2がNoの場合
+                else if ($('#q1 .select.no').hasClass('is-inactive') && $('#q2 .select.no').hasClass('is-inactive')) {
+                    $('#a5').fadeIn();
+                }
+                // Q1がNoかつQ2が「それ以外」の場合
+                else if ($('#q1 .select.no').hasClass('is-inactive') && $('#q2 .select.vague').hasClass('is-inactive')) {
+                    $('#a6').fadeIn();
+                }
+            });
+
+
+            //  診断を閉じる
+            $('.close-btn, .tool-btn.finish').on('click', function () {
+                $('.box').fadeOut("fast");
+                $('.select, .btn-wrap, .box-wrap, .box').removeClass('is-inactive');
+                $('.tool-btn.next').addClass('is-inactive');
+            });
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>
