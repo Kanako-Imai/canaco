@@ -19,7 +19,8 @@
 
 <body class="text-center">
     
-    <form class="form-signin" method="POST" id="signinForm"> <!-- フォームにIDを追加 -->
+    <!-- <form class="form-signin" method="POST" id="signinForm"> フォームにIDを追加 -->
+    <form class="form-signin" method="POST" id="signinForm" style="max-width: 400px; margin: auto;"> 
         <!-- <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
         <img class="mb-4" src="./upload/canacoちゃん.jpeg" alt="" width="120" height="160"> 
         <h1>Welcome to canaco</h1>
