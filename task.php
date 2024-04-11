@@ -58,10 +58,10 @@
 
                 <label>カラム：</label>
                 <select name="column_id">
-                    <option value="1">カラム（１）</option>
-                    <option value="2">カラム（２）</option>
-                    <option value="3">カラム（３）</option>
-                    <option value="4">カラム（４）</option>
+                    <option value="1">（１）見積</option>
+                    <option value="2">（２）契約</option>
+                    <option value="3">（３）出荷</option>
+                    <option value="4">（４）収支</option>
                 </select><br>
 
 
