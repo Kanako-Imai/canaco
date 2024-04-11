@@ -63,6 +63,13 @@ $tasks4 = $stmt4->fetchAll(PDO::FETCH_ASSOC);
     <script src="js/jquery-2.1.3.min.js"></script>
     <link rel="stylesheet" href="css/task.css">
 
+    <style>
+        /* 完了したタスクの背景色 */
+        .completed {
+            background-color: lightgray;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -90,12 +97,12 @@ $tasks4 = $stmt4->fetchAll(PDO::FETCH_ASSOC);
     <div class="kanban-board">
         <!-- カラム1 -->
         <div class="kanban-column" id="column-id-1">
-            <h2>カラム (1)</h2>
+            <h2>(1)見積</h2>
             <?php foreach ($tasks1 as $task) : ?>
                 <div class="kanban-item <?= $task["completed"] == 1 ? 'completed' : '' ?>">
                     <!-- <div class="kanban-item"> -->
                     <!-- 詳細部分 -->
-                    <div class="details">
+                    <div class="details <?= $task["completed"] == 1 ? 'completed' : '' ?>">
                         <p class="heading">タスク名：</p>
                         <p><?= $task["title"] ?></p>
                         <p class="heading">イベント：</p>
@@ -121,12 +128,12 @@ $tasks4 = $stmt4->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <!-- カラム2 -->
         <div class="kanban-column" id="column-id-2">
-            <h2>カラム (2)</h2>
+            <h2>(2)契約</h2>
             <?php foreach ($tasks2 as $task) : ?>
                 <div class="kanban-item <?= $task["completed"] == 1 ? 'completed' : '' ?>">
                     <!-- <div class="kanban-item"> -->
                     <!-- 詳細部分 -->
-                    <div class="details">
+                    <div class="details <?= $task["completed"] == 1 ? 'completed' : '' ?>">
                         <p class="heading">タスク名：</p>
                         <p><?= $task["title"] ?></p>
                         <p class="heading">イベント：</p>
@@ -152,12 +159,12 @@ $tasks4 = $stmt4->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <!-- カラム3 -->
         <div class="kanban-column" id="column-id-3">
-            <h2>カラム (3)</h2>
+            <h2>(3)出荷</h2>
             <?php foreach ($tasks3 as $task) : ?>
                 <div class="kanban-item <?= $task["completed"] == 1 ? 'completed' : '' ?>">
                     <!-- <div class="kanban-item"> -->
                     <!-- 詳細部分 -->
-                    <div class="details">
+                    <div class="details <?= $task["completed"] == 1 ? 'completed' : '' ?>">
                         <p class="heading">タスク名：</p>
                         <p><?= $task["title"] ?></p>
                         <p class="heading">イベント：</p>
@@ -183,12 +190,12 @@ $tasks4 = $stmt4->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <!-- カラム4 -->
         <div class="kanban-column" id="column-id-4">
-            <h2>カラム (4)</h2>
+            <h2>(4)収支</h2>
             <?php foreach ($tasks4 as $task) : ?>
                 <div class="kanban-item <?= $task["completed"] == 1 ? 'completed' : '' ?>">
                     <!-- <div class="kanban-item"> -->
                     <!-- 詳細部分 -->
-                    <div class="details">
+                    <div class="details <?= $task["completed"] == 1 ? 'completed' : '' ?>">
                         <p class="heading">タスク名：</p>
                         <p><?= $task["title"] ?></p>
                         <p class="heading">イベント：</p>

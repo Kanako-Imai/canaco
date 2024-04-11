@@ -5,7 +5,7 @@ function h($str)
   return htmlspecialchars($str, ENT_QUOTES);
 }
 
-//DB接続
+//DB接続 localhost
 function db_conn()
 {
   try {
@@ -18,6 +18,26 @@ function db_conn()
     exit('DB Connection Error:' . $e->getMessage());
   }
 }
+
+//DB接続 さくらサーバ　
+// function db_conn()
+// {
+//   try {
+//     $db_name = "canaco-0610_db_canaco";    //データベース名
+//     $db_id   = "canaco-0610";      //アカウント名
+//     $db_pw   = "";      //パスワード：XAMPPはパスワード無しに修正してください。
+//     $db_host = "mysql:dbname=canaco-0610_db_canaco;charset=utf8;host=mysql57.canaco-0610.sakura.ne.jp"; //DBホスト
+//     return new PDO('mysql:dbname=' . $db_name . ';charset=utf8;host=' . $db_host, $db_id, $db_pw);
+//   } catch (PDOException $e) {
+//     exit('DB Connection Error:' . $e->getMessage());
+//   }
+// }
+
+
+
+
+
+
 
 //SQLエラー
 function sql_error($stmt)

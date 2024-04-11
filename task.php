@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>タスク登録</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/task.css">
+    <link rel="stylesheet" href="css/calendar.css">
     <style>
         div {
             padding: 10px;
@@ -28,11 +30,9 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header"><a class="navbar-brand" href="select.php">案件一覧</a></div>
-            </div>
-        </nav>
+        <ul class="topnav">
+            <li><a class="active" href="select.php">Home</a></li>
+        </ul>
     </header>
 
     <form method="POST" action="task_insert.php" enctype="multipart/form-data">

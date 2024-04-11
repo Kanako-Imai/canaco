@@ -190,3 +190,8 @@ ul.topnav li.right {
 .completed {
     background-color: #f2f2f2;
 }
+
+/* 完了したタスクの背景色 */
+.completed {
+    background-color: lightgray; 
+}

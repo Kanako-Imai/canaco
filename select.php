@@ -83,6 +83,7 @@ if ($stmt) {
     <?php include("menu.php"); ?>
     <!-- Head[End] -->
     <!-- Main[Start] -->
+    <legend>案件一覧</legend>
     <!-- 検索フォーム -->
     <form action="select.php" method="get">
         <input type="text" id="keyword" name="keyword" placeholder="検索キーワードを入力" value="<?= $keyword ?>">

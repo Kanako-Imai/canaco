@@ -7,6 +7,12 @@
   <style>div{padding: 10px;font-size:16px;}</style>
   <style>label { display: block; margin-bottom: 5px; }</style>
   <style>textarea {padding: 8px;margin-bottom: 10px;box-sizing: border-box;resize: vertical;}</style>
+  <style>
+    .navbar-default {
+        background-color: #3949AB;
+        border-color:    #3949AB;;
+    }
+</style>
 </head>
 <body>
 
@@ -39,7 +45,7 @@
               <input type="text" name="name"><br>
             <label>メモ</label>
               <textArea name="naiyou" rows="4" cols="40"></textArea><br>
-            <label><input type="file" name="upfile"></label><br>
+            <!-- <label><input type="file" name="upfile"></label><br> -->
             <input type="submit" value="送信">
         </fieldset>
     </div>
