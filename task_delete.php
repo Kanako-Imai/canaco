@@ -22,8 +22,7 @@ if ($status === false) {
   sql_error($stmt);
 } else {
   // リダイレクト先のURLにidパラメータを含めてtask_select.phpにリダイレクトする
-  header("Location: task_select.php?id=" . $id);
-  exit; // リダイレクトした後は処理を終了する
+  redirect("task_select.php?id=" . $id);
 }
 
 ?>

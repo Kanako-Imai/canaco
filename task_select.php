@@ -224,7 +224,28 @@ $tasks4 = $stmt4->fetchAll(PDO::FETCH_ASSOC);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        // 以下にJava Scriptコードを記載//
+        // 削除ボタンがクリックされたときの処理
+        $('.kanban-item .btn-danger').on('click', function(e) {
+            e.preventDefault(); // デフォルトのイベントをキャンセル
+            var card = $(this).closest('.kanban-item'); // クリックされた削除ボタンの親要素であるカードを取得
+            var url = $(this).attr('href'); // 削除ボタンのhref属性から削除処理を行うURLを取得
+            // AJAXを使用して削除処理を行う
+            $.ajax({
+                url: url,
+                type: 'GET',
+                success: function(response) {
+                    // 削除処理が成功したら、該当のカードを即座に削除
+                    card.fadeOut('fast', function() {
+                        $(this).remove();
+                    });
+                },
+                error: function(xhr, status, error) {
+                    // 削除処理が失敗した場合の処理
+                    console.error(error);
+                    alert('削除に失敗しました。');
+                }
+            });
+        });
     </script>
 </body>
 
