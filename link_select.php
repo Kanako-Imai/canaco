@@ -41,9 +41,9 @@ if ($stmt) {
         // 削除ボタン
         $view .= '<td><a class="btn btn-danger" href="link_delete.php?id=' . $r["id"] . '">削除</a></td>';
 
-        if ($_SESSION["kanri_flg"] == "1") {
-            $view .= '<td><a class="btn btn-danger" href="delete.php?id=' . $r["id"] . '">[<i class="glyphicon glyphicon-remove"></i>削除]</a></td>';
-        }
+        // if ($_SESSION["kanri_flg"] == "1") {
+        //     $view .= '<td><a class="btn btn-danger" href="delete.php?id=' . $r["id"] . '">[<i class="glyphicon glyphicon-remove"></i>削除]</a></td>';
+        // }
         $view .= '</tr>';
     }
 } else {

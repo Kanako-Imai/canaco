@@ -43,9 +43,9 @@ if ($stmt) {
         // タスク表示ボタン
         $view .= '<td><a class="btn btn-success" href="task_select.php?id=' . $r["id"] . '">タスク表示</a></td>';
 
-        if ($_SESSION["kanri_flg"] == "1") {
-            $view .= '<td><a class="btn btn-danger" href="delete.php?id=' . $r["id"] . '">[<i class="glyphicon glyphicon-remove"></i>削除]</a></td>';
-        }
+        // if ($_SESSION["kanri_flg"] == "1") {
+        //     $view .= '<td><a class="btn btn-danger" href="delete.php?id=' . $r["id"] . '">[<i class="glyphicon glyphicon-remove"></i>削除]</a></td>';
+        // }
         $view .= '</tr>';
     }
 } else {
@@ -108,9 +108,9 @@ if ($stmt) {
                         <th class="wide-column">メモ</th>
                         <!-- <th>画像</th> -->
                         <th>action</th>
-                        <?php if ($_SESSION["kanri_flg"] == "1") : ?>
-                            <th>削除</th>
-                        <?php endif; ?>
+                        <!-- <?php if ($_SESSION["kanri_flg"] == "1") : ?>-->
+                            <!--<th>削除</th> -->
+                        <!-- <?php endif; ?> -->
                     </tr>
                 </thead>
                 <tbody>
