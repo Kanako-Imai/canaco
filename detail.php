@@ -77,10 +77,10 @@ if ($status == false) {
         <textArea name="naiyou" rows="4" cols="40"><?= $row['naiyou'] ?></textArea><br>
         <!-- <label><input type="file" name="upfile"></label><br> -->
 
-        <label>現在の画像：</label>
-        <img src="upload/<?= $row['img'] ?>" alt="現在の画像" style="max-width: 200px;"><br>
-        <label>新しい画像を選択：</label>
-        <input type="file" name="upfile"><br>
+        <!-- <label>現在の画像：</label> -->
+        <!-- <img src="upload/<?= $row['img'] ?>" alt="現在の画像" style="max-width: 200px;"><br> -->
+        <!-- <label>新しい画像を選択：</label>
+        <input type="file" name="upfile"><br> -->
 
 
 

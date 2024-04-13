@@ -5,7 +5,7 @@ function h($str)
   return htmlspecialchars($str, ENT_QUOTES);
 }
 
-//DB接続 localhost
+// DB接続 localhost
 function db_conn()
 {
   try {
@@ -19,7 +19,7 @@ function db_conn()
   }
 }
 
-//DB接続 さくらサーバ　
+// DB接続 さくらサーバ　
 // function db_conn()
 // {
 //   try {
