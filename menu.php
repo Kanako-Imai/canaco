@@ -36,6 +36,8 @@
         <div class="navbar-header">
             <li><a href="select.php">案件一覧</a></li>
             <li><a href="index.php">案件登録</a></li>
+            <li><a href="link_select.php">リンク一覧</a></li>
+            <li><a href="link.php">リンク登録</a></li>
             <li><a href="ikinuki.php">IKINUKI</a></li>
             <li><a href="user.php">ユーザー登録</a></li>
             <li><a href="user_select.php">ユーザー一覧</a></li>

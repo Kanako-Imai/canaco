@@ -10,7 +10,7 @@ $deliverydate   = $_POST["deliverydate"];
 $inquirydate   = $_POST["inquirydate"];
 $name  = $_POST["name"];
 $naiyou = $_POST["naiyou"];
-$img   = fileUpload("upfile","upload");
+// $img   = fileUpload("upfile","upload");
 
 
 
@@ -23,7 +23,7 @@ $stmt->bindValue(':deliverydate', $deliverydate);
 $stmt->bindValue(':inquirydate', $inquirydate);
 $stmt->bindValue(':name', $name);
 $stmt->bindValue(':naiyou', $naiyou);
-$stmt->bindValue(':img', $img);
+// $stmt->bindValue(':img', $img);
 $status = $stmt->execute();
 
 //４．データ登録処理後
